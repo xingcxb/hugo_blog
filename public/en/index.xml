@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Bu Qi Nest</title>
+        <link>http://localhost:1313/en/</link>
+        <description>Recent content on Bu Qi Nest</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>不器小窝</copyright><atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss+xml" />
+    </channel>
+</rss>

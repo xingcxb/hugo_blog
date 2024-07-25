@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前言 最近在GitHub上用Markdown写笔记，不知不觉又开始有点懒散了，感觉一个人去坚持下去哪怕是对自己有意义的事情真的很难，所以又拿现成的开源程序搞个博客，大概率是想一堆人来监督监督吧。\n个人博客 为什么选择个人博客 在搭建伊始脑海里就会吐槽自己&hellip;已经有那么多的成熟的写作平台和发布平台自己再大费周章去搭建和更新一个自己的博客有什么卵用\n就我的尿性而言，如果使用了第三方平台的话，那么无外乎以下几种情况：\n不停的尝试第三方平台，导致写出来的文档越来越分散，最终不了了之\n第三方平台删库跑路，数据没有了\n写着写着觉得平台太low了，放弃\n没有成就感，放弃\n越来越多的限制，放弃\n于是兜兜转转又回到了个人博客的路上。这里，我可以不需要像知乎、简书那么专业；不需要像朋友圈、微博那样被束缚到情绪的文字中。个人博客就是我的地盘，一个属于我的空间，一个属于我的世界。\n博客程序的选择 以前折腾过很多时间，前前后后尝试过许多方案，自己写一个博客程序、使用WordPress、Typecho、Ghost、GitHub等等，但是没有一个能够满足我的需求。\n无意间看到了VuePress虽然偏向于技术文档类型的，但是也不失为一个好的个人博客程序的选择。有了基础就该找找锦上添花的Theme了，也是缘分，找到了Vdoing，于是&hellip;基于Github Pages + VuePress的个人博客就这么敲定了。\n写博客的初衷和价值 写博客的初衷 老一辈的常说，好记性不如烂笔头。我个人理解的就是知识的输入和输出。\n输入 所谓的输入，我个人理解的就是&hellip;看书、看公众号、微博、头条等等相关的app或网站所展示的内容的时候，其实就是知识在进行输入了。当然在这个遍地都是所谓专家、是个阿猫阿狗都是老师的时代，产生的知识垃圾太多了。\n输出 所谓的输出，我个人的理解就是；对于输入知识的针对自己的情况所进行的理解，然后对外展示的过程。或者更通俗一点的说就是自己去当所谓的老师或专家的过程。\n写博客的价值 如果把博客当作一个知识库，那么博客的价值就是：工作心得记录\n如果把博客当作一个分享，那么博客的价值就是：分享知识\n如果把博客当作一个思考，那么博客的价值就是：个人思考和成长\n我更倾向于价值在于输出，将输入的知识进行融会贯通的输出，无论是对还是错，不重要，重要的是这是我想输出的结果；当然，赚点广告费也是不错的，毕竟还是要恰饭的。\n如何坚持写作 提笔 写作不是一个容易的事情，长时间没有尝试写非知识点的东西的时候，常常会觉得没有手感，不知道写些什么玩意，也会不自量力的想写出来就是一飞冲天的结果。\n本文写出来之前就已经纠结了一周的时间在想怎么去写，怎么写的好，以及怎么写才更完美。其实这走入了误区了，写作原本就是一个个性极强的事情，如果为了取悦读者去适配形态的写作，那么逐渐会放弃自己的知识输出\n打磨 「但知行好事,莫要问前程」写作虽然是一个自我记录、自我发现、自我探索和表达的过程。但是由于每个文章产出的时候大部分都是基于特定的时间点，如果没有进行仔细的打磨，仅仅因为一时的激情而进行的写作基本上到了后面就是一个空的文章了，时间长了，自己都不知道文章原本的味道是什么样的了。\n总结 2022年，开发了个人的桌面程序xingcxb/ToDb: 又一款数据库连接工具，续上了博客。\n就像爱情公寓里面的一句台词:「曾小贤活着的证据居然就是沙发上的屁股印记」。很多时候想挣扎却又觉得太累，想放弃又不甘心。\n拾起容易坚持难。其实2022年算是开了一个良好的头，项目开源了、博客上了、GoLang学习了，挺好的，用一篇篇笔记记录下知识点，记录下变化和成长。\n「但知行好事,莫要问前程」">
+<title>都2022年了，我TM居然又写起了博客</title>
+
+<link rel='canonical' href='http://localhost:1313/p/speak/b3390c/'>
+
+<link rel="stylesheet" href="/scss/style.min.6f952244c37facee38f2f67fc52a66f5abbb1284442fe6a56ef22c50788ea2f0.css"><meta property='og:title' content="都2022年了，我TM居然又写起了博客">
+<meta property='og:description' content="前言 最近在GitHub上用Markdown写笔记，不知不觉又开始有点懒散了，感觉一个人去坚持下去哪怕是对自己有意义的事情真的很难，所以又拿现成的开源程序搞个博客，大概率是想一堆人来监督监督吧。\n个人博客 为什么选择个人博客 在搭建伊始脑海里就会吐槽自己&hellip;已经有那么多的成熟的写作平台和发布平台自己再大费周章去搭建和更新一个自己的博客有什么卵用\n就我的尿性而言，如果使用了第三方平台的话，那么无外乎以下几种情况：\n不停的尝试第三方平台，导致写出来的文档越来越分散，最终不了了之\n第三方平台删库跑路，数据没有了\n写着写着觉得平台太low了，放弃\n没有成就感，放弃\n越来越多的限制，放弃\n于是兜兜转转又回到了个人博客的路上。这里，我可以不需要像知乎、简书那么专业；不需要像朋友圈、微博那样被束缚到情绪的文字中。个人博客就是我的地盘，一个属于我的空间，一个属于我的世界。\n博客程序的选择 以前折腾过很多时间，前前后后尝试过许多方案，自己写一个博客程序、使用WordPress、Typecho、Ghost、GitHub等等，但是没有一个能够满足我的需求。\n无意间看到了VuePress虽然偏向于技术文档类型的，但是也不失为一个好的个人博客程序的选择。有了基础就该找找锦上添花的Theme了，也是缘分，找到了Vdoing，于是&hellip;基于Github Pages + VuePress的个人博客就这么敲定了。\n写博客的初衷和价值 写博客的初衷 老一辈的常说，好记性不如烂笔头。我个人理解的就是知识的输入和输出。\n输入 所谓的输入，我个人理解的就是&hellip;看书、看公众号、微博、头条等等相关的app或网站所展示的内容的时候，其实就是知识在进行输入了。当然在这个遍地都是所谓专家、是个阿猫阿狗都是老师的时代，产生的知识垃圾太多了。\n输出 所谓的输出，我个人的理解就是；对于输入知识的针对自己的情况所进行的理解，然后对外展示的过程。或者更通俗一点的说就是自己去当所谓的老师或专家的过程。\n写博客的价值 如果把博客当作一个知识库，那么博客的价值就是：工作心得记录\n如果把博客当作一个分享，那么博客的价值就是：分享知识\n如果把博客当作一个思考，那么博客的价值就是：个人思考和成长\n我更倾向于价值在于输出，将输入的知识进行融会贯通的输出，无论是对还是错，不重要，重要的是这是我想输出的结果；当然，赚点广告费也是不错的，毕竟还是要恰饭的。\n如何坚持写作 提笔 写作不是一个容易的事情，长时间没有尝试写非知识点的东西的时候，常常会觉得没有手感，不知道写些什么玩意，也会不自量力的想写出来就是一飞冲天的结果。\n本文写出来之前就已经纠结了一周的时间在想怎么去写，怎么写的好，以及怎么写才更完美。其实这走入了误区了，写作原本就是一个个性极强的事情，如果为了取悦读者去适配形态的写作，那么逐渐会放弃自己的知识输出\n打磨 「但知行好事,莫要问前程」写作虽然是一个自我记录、自我发现、自我探索和表达的过程。但是由于每个文章产出的时候大部分都是基于特定的时间点，如果没有进行仔细的打磨，仅仅因为一时的激情而进行的写作基本上到了后面就是一个空的文章了，时间长了，自己都不知道文章原本的味道是什么样的了。\n总结 2022年，开发了个人的桌面程序xingcxb/ToDb: 又一款数据库连接工具，续上了博客。\n就像爱情公寓里面的一句台词:「曾小贤活着的证据居然就是沙发上的屁股印记」。很多时候想挣扎却又觉得太累，想放弃又不甘心。\n拾起容易坚持难。其实2022年算是开了一个良好的头，项目开源了、博客上了、GoLang学习了，挺好的，用一篇篇笔记记录下知识点，记录下变化和成长。\n「但知行好事,莫要问前程」">
+<meta property='og:url' content='http://localhost:1313/p/speak/b3390c/'>
+<meta property='og:site_name' content='不器小窝'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='随笔' /><meta property='article:tag' content='博客' /><meta property='article:tag' content='吐槽' /><meta property='article:tag' content='2022' /><meta property='article:published_time' content='2022-06-29T09:35:54&#43;00:00'/><meta property='article:modified_time' content='2022-06-29T09:35:54&#43;00:00'/>
+<meta name="twitter:site" content="@easymbol">
+    <meta name="twitter:creator" content="@easymbol"><meta name="twitter:title" content="都2022年了，我TM居然又写起了博客">
+<meta name="twitter:description" content="前言 最近在GitHub上用Markdown写笔记，不知不觉又开始有点懒散了，感觉一个人去坚持下去哪怕是对自己有意义的事情真的很难，所以又拿现成的开源程序搞个博客，大概率是想一堆人来监督监督吧。\n个人博客 为什么选择个人博客 在搭建伊始脑海里就会吐槽自己&hellip;已经有那么多的成熟的写作平台和发布平台自己再大费周章去搭建和更新一个自己的博客有什么卵用\n就我的尿性而言，如果使用了第三方平台的话，那么无外乎以下几种情况：\n不停的尝试第三方平台，导致写出来的文档越来越分散，最终不了了之\n第三方平台删库跑路，数据没有了\n写着写着觉得平台太low了，放弃\n没有成就感，放弃\n越来越多的限制，放弃\n于是兜兜转转又回到了个人博客的路上。这里，我可以不需要像知乎、简书那么专业；不需要像朋友圈、微博那样被束缚到情绪的文字中。个人博客就是我的地盘，一个属于我的空间，一个属于我的世界。\n博客程序的选择 以前折腾过很多时间，前前后后尝试过许多方案，自己写一个博客程序、使用WordPress、Typecho、Ghost、GitHub等等，但是没有一个能够满足我的需求。\n无意间看到了VuePress虽然偏向于技术文档类型的，但是也不失为一个好的个人博客程序的选择。有了基础就该找找锦上添花的Theme了，也是缘分，找到了Vdoing，于是&hellip;基于Github Pages + VuePress的个人博客就这么敲定了。\n写博客的初衷和价值 写博客的初衷 老一辈的常说，好记性不如烂笔头。我个人理解的就是知识的输入和输出。\n输入 所谓的输入，我个人理解的就是&hellip;看书、看公众号、微博、头条等等相关的app或网站所展示的内容的时候，其实就是知识在进行输入了。当然在这个遍地都是所谓专家、是个阿猫阿狗都是老师的时代，产生的知识垃圾太多了。\n输出 所谓的输出，我个人的理解就是；对于输入知识的针对自己的情况所进行的理解，然后对外展示的过程。或者更通俗一点的说就是自己去当所谓的老师或专家的过程。\n写博客的价值 如果把博客当作一个知识库，那么博客的价值就是：工作心得记录\n如果把博客当作一个分享，那么博客的价值就是：分享知识\n如果把博客当作一个思考，那么博客的价值就是：个人思考和成长\n我更倾向于价值在于输出，将输入的知识进行融会贯通的输出，无论是对还是错，不重要，重要的是这是我想输出的结果；当然，赚点广告费也是不错的，毕竟还是要恰饭的。\n如何坚持写作 提笔 写作不是一个容易的事情，长时间没有尝试写非知识点的东西的时候，常常会觉得没有手感，不知道写些什么玩意，也会不自量力的想写出来就是一飞冲天的结果。\n本文写出来之前就已经纠结了一周的时间在想怎么去写，怎么写的好，以及怎么写才更完美。其实这走入了误区了，写作原本就是一个个性极强的事情，如果为了取悦读者去适配形态的写作，那么逐渐会放弃自己的知识输出\n打磨 「但知行好事,莫要问前程」写作虽然是一个自我记录、自我发现、自我探索和表达的过程。但是由于每个文章产出的时候大部分都是基于特定的时间点，如果没有进行仔细的打磨，仅仅因为一时的激情而进行的写作基本上到了后面就是一个空的文章了，时间长了，自己都不知道文章原本的味道是什么样的了。\n总结 2022年，开发了个人的桌面程序xingcxb/ToDb: 又一款数据库连接工具，续上了博客。\n就像爱情公寓里面的一句台词:「曾小贤活着的证据居然就是沙发上的屁股印记」。很多时候想挣扎却又觉得太累，想放弃又不甘心。\n拾起容易坚持难。其实2022年算是开了一个良好的头，项目开源了、博客上了、GoLang学习了，挺好的，用一篇篇笔记记录下知识点，记录下变化和成长。\n「但知行好事,莫要问前程」">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    <img src="https://cdn.jsdelivr.net/gh/xingcxb/blog_img@blog1/blog/basic/Avatar.png" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                </a>
+                
+                    <span class="emoji">🧋</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">不器小窝</a></h1>
+            <h2 class="site-description">知行合一</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/xingcxb'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/" selected>简体中文</option>
+                                
+                                    <option value="http://localhost:1313/en/" >English</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#个人博客">个人博客</a>
+      <ol>
+        <li><a href="#为什么选择个人博客">为什么选择个人博客</a></li>
+        <li><a href="#博客程序的选择">博客程序的选择</a></li>
+      </ol>
+    </li>
+    <li><a href="#写博客的初衷和价值">写博客的初衷和价值</a>
+      <ol>
+        <li><a href="#写博客的初衷">写博客的初衷</a>
+          <ol>
+            <li><a href="#输入">输入</a></li>
+            <li><a href="#输出">输出</a></li>
+          </ol>
+        </li>
+        <li><a href="#写博客的价值">写博客的价值</a></li>
+      </ol>
+    </li>
+    <li><a href="#如何坚持写作">如何坚持写作</a>
+      <ol>
+        <li><a href="#提笔">提笔</a></li>
+        <li><a href="#打磨">打磨</a></li>
+      </ol>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E9%9A%8F%E7%AC%94/" >
+                随笔
+            </a>
+        
+            <a href="/categories/2022/" >
+                2022
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/speak/b3390c/">都2022年了，我TM居然又写起了博客</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jun 29, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="前言">前言</h2>
+<p>最近在<code>GitHub</code>上用<code>Markdown</code>写笔记，不知不觉又开始有点懒散了，感觉一个人去坚持下去哪怕是对自己有意义的事情真的很难，所以又拿现成的开源程序搞个博客，大概率是想一堆人来监督监督吧。</p>
+<!-- more -->
+<p><InArticleAdsense
+data-ad-client="ca-pub-1725717718088510"
+data-ad-slot="7426219401">
+</InArticleAdsense></p>
+<h2 id="个人博客">个人博客</h2>
+<h3 id="为什么选择个人博客">为什么选择个人博客</h3>
+<p>在搭建伊始脑海里就会吐槽自己&hellip;已经有那么多的成熟的写作平台和发布平台自己再大费周章去搭建和更新一个自己的博客有什么卵用</p>
+<p>就我的尿性而言，如果使用了第三方平台的话，那么无外乎以下几种情况：</p>
+<ol>
+<li>
+<p>不停的尝试第三方平台，导致写出来的文档越来越分散，最终不了了之</p>
+</li>
+<li>
+<p>第三方平台删库跑路，数据没有了</p>
+</li>
+<li>
+<p>写着写着觉得平台太<code>low</code>了，放弃</p>
+</li>
+<li>
+<p>没有成就感，放弃</p>
+</li>
+<li>
+<p>越来越多的限制，放弃</p>
+</li>
+</ol>
+<p>于是兜兜转转又回到了个人博客的路上。这里，我可以不需要像知乎、简书那么专业；不需要像朋友圈、微博那样被束缚到情绪的文字中。个人博客就是我的地盘，一个属于我的空间，一个属于我的世界。</p>
+<h3 id="博客程序的选择">博客程序的选择</h3>
+<p>以前折腾过很多时间，前前后后尝试过许多方案，自己写一个博客程序、使用<code>WordPress</code>、<code>Typecho</code>、<code>Ghost</code>、<code>GitHub</code>等等，但是没有一个能够满足我的需求。</p>
+<p>无意间看到了<code>VuePress</code>虽然偏向于技术文档类型的，但是也不失为一个好的个人博客程序的选择。有了基础就该找找锦上添花的<code>Theme</code>了，也是缘分，找到了<code>Vdoing</code>，于是&hellip;基于<code>Github Pages + VuePress</code>的个人博客就这么敲定了。</p>
+<h2 id="写博客的初衷和价值">写博客的初衷和价值</h2>
+<h3 id="写博客的初衷">写博客的初衷</h3>
+<p>老一辈的常说，好记性不如烂笔头。我个人理解的就是知识的输入和输出。</p>
+<h4 id="输入">输入</h4>
+<p>所谓的输入，我个人理解的就是&hellip;看书、看公众号、微博、头条等等相关的<code>app</code>或网站所展示的内容的时候，其实就是知识在进行输入了。当然在这个遍地都是所谓专家、是个阿猫阿狗都是老师的时代，产生的知识垃圾太多了。</p>
+<h4 id="输出">输出</h4>
+<p>所谓的输出，我个人的理解就是；对于输入知识的针对自己的情况所进行的理解，然后对外展示的过程。或者更通俗一点的说就是自己去当所谓的老师或专家的过程。</p>
+<h3 id="写博客的价值">写博客的价值</h3>
+<p>如果把博客当作一个知识库，那么博客的价值就是：工作心得记录</p>
+<p>如果把博客当作一个分享，那么博客的价值就是：分享知识</p>
+<p>如果把博客当作一个思考，那么博客的价值就是：个人思考和成长</p>
+<p>我更倾向于价值在于输出，将输入的知识进行融会贯通的输出，无论是对还是错，不重要，重要的是这是我想输出的结果；当然，赚点广告费也是不错的，毕竟还是要恰饭的。</p>
+<h2 id="如何坚持写作">如何坚持写作</h2>
+<h3 id="提笔">提笔</h3>
+<p>写作不是一个容易的事情，长时间没有尝试写非知识点的东西的时候，常常会觉得没有手感，不知道写些什么玩意，也会不自量力的想写出来就是一飞冲天的结果。</p>
+<p>本文写出来之前就已经纠结了一周的时间在想怎么去写，怎么写的好，以及怎么写才更完美。其实这走入了误区了，写作原本就是一个个性极强的事情，如果为了取悦读者去适配形态的写作，那么逐渐会放弃自己的知识输出</p>
+<h3 id="打磨">打磨</h3>
+<p>「但知行好事,莫要问前程」写作虽然是一个自我记录、自我发现、自我探索和表达的过程。但是由于每个文章产出的时候大部分都是基于特定的时间点，如果没有进行仔细的打磨，仅仅因为一时的激情而进行的写作基本上到了后面就是一个空的文章了，时间长了，自己都不知道文章原本的味道是什么样的了。</p>
+<h2 id="总结">总结</h2>
+<p><code>2022</code>年，开发了个人的桌面程序<a class="link" href="https://github.com/xingcxb/ToDb"  target="_blank" rel="noopener"
+    >xingcxb/ToDb: 又一款数据库连接工具</a>，续上了博客。</p>
+<p>就像爱情公寓里面的一句台词:「曾小贤活着的证据居然就是沙发上的屁股印记」。很多时候想挣扎却又觉得太累，想放弃又不甘心。</p>
+<p>拾起容易坚持难。其实<code>2022</code>年算是开了一个良好的头，项目开源了、博客上了、<code>GoLang</code>学习了，挺好的，用一篇篇笔记记录下知识点，记录下变化和成长。</p>
+<p>「但知行好事,莫要问前程」</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a>
+        
+            <a href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a>
+        
+            <a href="/tags/%E5%90%90%E6%A7%BD/">吐槽</a>
+        
+            <a href="/tags/2022/">2022</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2024 不器小窝
+    </section>
+    
+    <section class="powerby">
+        
+            <a href="https://www.foreverblog.cn/go.html" target="_blank"> <img src="https://img.foreverblog.cn/wormhole_3_tp.gif" alt="" style="width:auto;height:32px;" title="穿梭虫洞-随机访问十年之约友链博客"></a> <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.24.1">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
